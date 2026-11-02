@@ -1,0 +1,699 @@
+text,intent
+Bonjour,greeting
+Salut,greeting
+Bonsoir,greeting
+"Bonjour, pouvez-vous m'aider ?",greeting
+"Salut, j'ai besoin d'aide",greeting
+"Bonjour, je voudrais des conseils",greeting
+Coucou,greeting
+"Bonsoir, j'ai une question",greeting
+"Salut, pouvez-vous m'aider avec ma peau ?",greeting
+"Bonjour, je cherche des conseils pour ma peau",greeting
+Hello,greeting
+Bonjour assistant,greeting
+Salut assistant,greeting
+Bonsoir assistant,greeting
+"Bonjour, je voudrais commencer",greeting
+"Salut, je voudrais commencer",greeting
+"Bonjour, j'ai besoin de conseils skincare",greeting
+"Bonsoir, pouvez-vous m'aider ?",greeting
+"Salut, j'ai une question sur ma routine",greeting
+"Bonjour, j'ai une question",greeting
+"Coucou, pouvez-vous m'aider ?",greeting
+"Hello, j'aurais besoin de conseils",greeting
+Bonjour à vous,greeting
+Bonsoir à vous,greeting
+"Salut, je voudrais des conseils pour mon visage",greeting
+"Bonjour, je voudrais parler de ma routine",greeting
+"Salut, j'aimerais avoir des conseils",greeting
+"Bonjour, je souhaite avoir de l'aide",greeting
+"Bonsoir, j'aimerais avoir des conseils",greeting
+"Salut, j'ai besoin de conseils skincare",greeting
+"Bonjour, pouvez-vous me conseiller ?",greeting
+"Hello, pouvez-vous m'aider ?",greeting
+"Salut, je voudrais poser une question",greeting
+"Bonjour, je voudrais poser une question",greeting
+"Bonsoir, je voudrais poser une question",greeting
+"Bonjour, j'aimerais des conseils pour ma peau",greeting
+"Salut, j'aimerais des conseils pour mon visage",greeting
+"Bonjour, je commence ma routine",greeting
+"Salut, je commence une routine",greeting
+"Bonsoir, je cherche des conseils",greeting
+"Bonjour, je cherche de l'aide",greeting
+"Salut, je cherche de l'aide",greeting
+"Bonjour, pouvez-vous me renseigner ?",greeting
+"Bonsoir, pouvez-vous me renseigner ?",greeting
+"Salut, je voudrais me renseigner",greeting
+"Bonjour, j'aimerais commencer une routine",greeting
+"Salut, j'aimerais commencer une routine",greeting
+"Bonjour, je suis là pour avoir des conseils",greeting
+"Bonsoir, je suis là pour avoir des conseils",greeting
+"Salut, pouvez-vous m'accompagner ?",greeting
+Je veux une routine pour ma peau,routine_request
+Pouvez-vous me créer une routine ?,routine_request
+Je voudrais une routine skincare,routine_request
+Donnez-moi une routine adaptée à ma peau,routine_request
+Je cherche une routine matin et soir,routine_request
+Pouvez-vous me proposer une routine ?,routine_request
+J'aimerais avoir une routine personnalisée,routine_request
+Je veux une routine adaptée à mon profil,routine_request
+Pouvez-vous construire ma routine ?,routine_request
+Je voudrais commencer une routine de soins,routine_request
+Quelle routine me conseillez-vous ?,routine_request
+Aidez-moi à créer une routine,routine_request
+Je veux une routine pour mon visage,routine_request
+Je cherche une routine adaptée à mes besoins,routine_request
+Pouvez-vous préparer une routine pour moi ?,routine_request
+J'aimerais une routine personnalisée pour ma peau,routine_request
+Je voudrais savoir quelle routine utiliser,routine_request
+Proposez-moi une routine skincare,routine_request
+Je veux une routine du matin et du soir,routine_request
+Pouvez-vous me donner une routine complète ?,routine_request
+J'ai besoin d'une routine pour ma peau,routine_request
+Je souhaite une routine adaptée à ma peau,routine_request
+Quelle routine serait adaptée à mon profil ?,routine_request
+Je voudrais une routine simple pour ma peau,routine_request
+Pouvez-vous me recommander une routine ?,routine_request
+Je cherche une routine quotidienne,routine_request
+Je veux savoir quoi utiliser matin et soir,routine_request
+Aidez-moi à établir une routine,routine_request
+Je voudrais une routine de soins du visage,routine_request
+Pouvez-vous créer ma routine de soins ?,routine_request
+Je veux une routine pour améliorer ma peau,routine_request
+J'aimerais recevoir une routine,routine_request
+Je voudrais une routine adaptée à mes problèmes de peau,routine_request
+Quelle routine dois-je suivre ?,routine_request
+Pouvez-vous me proposer une routine personnalisée ?,routine_request
+Je veux avoir une routine skincare,routine_request
+J'aimerais savoir quels soins utiliser matin et soir,routine_request
+Je voudrais organiser ma routine,routine_request
+Aidez-moi à choisir une routine complète,routine_request
+Je cherche une routine pour mon visage,routine_request
+Pouvez-vous construire une routine pour moi ?,routine_request
+Je souhaite commencer une routine adaptée,routine_request
+Je voudrais une routine pour prendre soin de ma peau,routine_request
+Quelle routine de soins me conseillez-vous ?,routine_request
+Je veux une routine complète pour ma peau,routine_request
+J'aimerais une routine adaptée à mes préoccupations,routine_request
+Pouvez-vous m'aider à établir ma routine ?,routine_request
+Je voudrais connaître ma routine idéale,routine_request
+Je veux une routine personnalisée,routine_request
+Donnez-moi une routine adaptée à mon profil,routine_request
+J'ai la peau grasse,profile_info
+Ma peau est sèche,profile_info
+J'ai une peau mixte,profile_info
+Ma peau est sensible,profile_info
+J'ai des boutons,profile_info
+J'ai de l'acné,profile_info
+J'ai des taches sur le visage,profile_info
+J'ai des rougeurs,profile_info
+Ma peau est déshydratée,profile_info
+J'ai la peau normale,profile_info
+J'ai une peau très sensible,profile_info
+Ma peau produit beaucoup de sébum,profile_info
+J'ai des imperfections,profile_info
+J'ai des points noirs,profile_info
+J'ai des taches brunes,profile_info
+J'ai le teint irrégulier,profile_info
+Ma peau tiraille,profile_info
+J'ai la peau sèche et sensible,profile_info
+J'ai la peau grasse avec des boutons,profile_info
+J'ai une peau mixte avec des imperfections,profile_info
+Ma peau est sensible et rouge,profile_info
+J'ai des rougeurs sur les joues,profile_info
+J'ai des problèmes d'acné,profile_info
+J'ai des pores visibles,profile_info
+Ma peau manque d'hydratation,profile_info
+J'ai la peau grasse et des taches,profile_info
+J'ai la peau sèche avec des rougeurs,profile_info
+Ma peau est mixte et déshydratée,profile_info
+J'ai une peau acnéique,profile_info
+J'ai des cicatrices d'acné,profile_info
+J'ai une peau réactive,profile_info
+Ma peau s'irrite facilement,profile_info
+J'ai des imperfections sur le visage,profile_info
+J'ai beaucoup de boutons,profile_info
+J'ai quelques taches brunes,profile_info
+Ma peau est très sèche,profile_info
+J'ai une peau grasse au niveau du front,profile_info
+J'ai une peau mixte avec une zone T grasse,profile_info
+J'ai des rougeurs et une peau sensible,profile_info
+Ma peau manque d'éclat,profile_info
+J'ai le teint terne,profile_info
+J'ai des marques après l'acné,profile_info
+Ma peau est déshydratée mais grasse,profile_info
+J'ai une peau sèche qui tiraille,profile_info
+J'ai des boutons et des points noirs,profile_info
+J'ai des taches et des rougeurs,profile_info
+Ma peau est sensible aux produits,profile_info
+J'ai facilement des irritations,profile_info
+J'ai des imperfections et des taches,profile_info
+Ma peau est grasse et sensible,profile_info
+Quel produit me conseillez-vous ?,product_recommendation
+Quel sérum serait adapté à ma peau ?,product_recommendation
+Pouvez-vous me recommander un produit ?,product_recommendation
+Je cherche un bon nettoyant pour ma peau,product_recommendation
+Quel hydratant me conseillez-vous ?,product_recommendation
+Quel produit utiliser pour mes boutons ?,product_recommendation
+Quel sérum choisir pour mes taches ?,product_recommendation
+Avez-vous un produit adapté aux peaux grasses ?,product_recommendation
+Je voudrais un produit pour peau sèche,product_recommendation
+Quel produit serait adapté à ma peau sensible ?,product_recommendation
+Pouvez-vous choisir un sérum pour moi ?,product_recommendation
+Je cherche une crème hydratante adaptée,product_recommendation
+Quel nettoyant dois-je utiliser ?,product_recommendation
+Que me conseillez-vous pour mes imperfections ?,product_recommendation
+Quel produit utiliser contre les rougeurs ?,product_recommendation
+Je voudrais un produit contre les taches,product_recommendation
+Quel produit est adapté aux peaux acnéiques ?,product_recommendation
+Recommandez-moi un sérum,product_recommendation
+Je cherche une crème pour mon visage,product_recommendation
+Quel écran solaire me conseillez-vous ?,product_recommendation
+Quel soin serait adapté à mon profil ?,product_recommendation
+Pouvez-vous me proposer un produit précis ?,product_recommendation
+Quel traitement me recommandez-vous pour l'acné ?,product_recommendation
+Je voudrais choisir un hydratant,product_recommendation
+Quel produit puis-je utiliser pour ma peau grasse ?,product_recommendation
+Je cherche un soin pour peau sensible,product_recommendation
+Quel sérum choisir pour une peau déshydratée ?,product_recommendation
+Quel produit utiliser pour hydrater ma peau ?,product_recommendation
+Je voudrais une recommandation de produit,product_recommendation
+Pouvez-vous me recommander un nettoyant ?,product_recommendation
+Quel soin choisir pour mes taches brunes ?,product_recommendation
+Je cherche un produit pour mes rougeurs,product_recommendation
+Quel produit serait le plus adapté à mes besoins ?,product_recommendation
+Aidez-moi à choisir un produit,product_recommendation
+Quel sérum serait le mieux pour moi ?,product_recommendation
+Je voudrais un soin pour mes imperfections,product_recommendation
+Quel hydratant choisir pour une peau sèche ?,product_recommendation
+Quel nettoyant convient à une peau grasse ?,product_recommendation
+Je cherche une protection solaire adaptée,product_recommendation
+Pouvez-vous me conseiller un produit de soin ?,product_recommendation
+Quel traitement puis-je utiliser pour mes boutons ?,product_recommendation
+Je voudrais une recommandation adaptée à ma peau,product_recommendation
+Quel produit choisir pour une peau sensible ?,product_recommendation
+Quel soin utiliser pour améliorer mon teint ?,product_recommendation
+Je cherche un sérum contre les taches,product_recommendation
+Quel produit me conviendrait le mieux ?,product_recommendation
+Pouvez-vous sélectionner un produit pour moi ?,product_recommendation
+Je veux une recommandation de soin,product_recommendation
+Quel produit dois-je utiliser pour mon problème de peau ?,product_recommendation
+Je cherche un produit adapté à mes besoins,product_recommendation
+Pourquoi me recommandez-vous cette routine ?,routine_explanation
+Pourquoi avez-vous choisi ces produits ?,routine_explanation
+Pourquoi ce produit est-il recommandé ?,routine_explanation
+Pouvez-vous expliquer cette recommandation ?,routine_explanation
+Pourquoi ce sérum est-il adapté à ma peau ?,routine_explanation
+Pourquoi avez-vous choisi cet hydratant ?,routine_explanation
+Quelle est la raison de cette recommandation ?,routine_explanation
+Pourquoi ce produit convient-il à mon profil ?,routine_explanation
+Pouvez-vous m'expliquer le choix du produit ?,routine_explanation
+Pourquoi ce soin est-il présent dans ma routine ?,routine_explanation
+Pourquoi dois-je utiliser ce produit ?,routine_explanation
+Pourquoi ce traitement me convient-il ?,routine_explanation
+Expliquez-moi pourquoi vous avez choisi ce sérum,routine_explanation
+Pourquoi cette routine est-elle adaptée à ma peau ?,routine_explanation
+Comment avez-vous choisi ces produits ?,routine_explanation
+Sur quoi se base votre recommandation ?,routine_explanation
+Pourquoi ce produit plutôt qu'un autre ?,routine_explanation
+Pouvez-vous justifier votre choix ?,routine_explanation
+Pourquoi ce soin est-il conseillé pour mes boutons ?,routine_explanation
+Pourquoi ce produit est-il adapté à mes taches ?,routine_explanation
+Pourquoi recommandez-vous cet hydratant ?,routine_explanation
+Pourquoi avez-vous mis ce produit dans ma routine ?,routine_explanation
+Pouvez-vous expliquer le choix de ma routine ?,routine_explanation
+Pourquoi cette routine correspond-elle à mon profil ?,routine_explanation
+Qu'est-ce qui justifie cette recommandation ?,routine_explanation
+Pourquoi ce sérum est-il conseillé pour ma peau ?,routine_explanation
+Pourquoi utilisez-vous ce produit dans ma routine ?,routine_explanation
+Je voudrais comprendre votre recommandation,routine_explanation
+Pouvez-vous m'expliquer la routine proposée ?,routine_explanation
+Pourquoi ce produit répond-il à mon problème ?,routine_explanation
+Pourquoi ce soin a-t-il été sélectionné ?,routine_explanation
+Expliquez-moi pourquoi ce produit me convient,routine_explanation
+Pourquoi cette combinaison de produits ?,routine_explanation
+Pourquoi avez-vous choisi cette routine pour moi ?,routine_explanation
+Je veux savoir pourquoi ce produit est recommandé,routine_explanation
+Pouvez-vous expliquer les choix effectués ?,routine_explanation
+Pourquoi ce produit est-il adapté à ma peau grasse ?,routine_explanation
+Pourquoi ce soin est-il adapté à ma peau sensible ?,routine_explanation
+Pourquoi ce produit est-il adapté à mes imperfections ?,routine_explanation
+Pourquoi ce sérum est-il présent dans ma routine ?,routine_explanation
+Comment avez-vous déterminé ces recommandations ?,routine_explanation
+Pourquoi ce produit correspond à mes préoccupations ?,routine_explanation
+Je voudrais une explication de ma routine,routine_explanation
+Pouvez-vous me dire pourquoi vous avez choisi ces soins ?,routine_explanation
+Pourquoi cette recommandation est-elle adaptée à mes besoins ?,routine_explanation
+Expliquez le choix des produits de ma routine,routine_explanation
+Pourquoi avez-vous sélectionné ce traitement ?,routine_explanation
+Je voudrais comprendre pourquoi ce soin est conseillé,routine_explanation
+Pourquoi ce produit a-t-il été retenu pour ma routine ?,routine_explanation
+Je veux modifier ma routine,routine_modification
+Peux-tu changer ma routine du soir ?,routine_modification
+Je voudrais modifier un produit de ma routine,routine_modification
+Je veux remplacer mon sérum,routine_modification
+Peux-tu changer mon hydratant ?,routine_modification
+Je voudrais un autre nettoyant,routine_modification
+Je veux remplacer le produit de ma routine,routine_modification
+Peux-tu modifier le traitement du soir ?,routine_modification
+Je voudrais changer un produit qui ne me convient pas,routine_modification
+Je veux une autre crème hydratante,routine_modification
+Peux-tu remplacer mon sérum par un autre ?,routine_modification
+Je souhaite modifier ma routine du matin,routine_modification
+Je veux changer ma routine du matin,routine_modification
+Je voudrais changer ma routine du soir,routine_modification
+Peux-tu remplacer mon nettoyant ?,routine_modification
+"Je ne veux plus utiliser ce produit, peux-tu le remplacer ?",routine_modification
+Je voudrais une alternative à ce produit,routine_modification
+Peux-tu me proposer un autre sérum ?,routine_modification
+Je veux modifier une étape de ma routine,routine_modification
+Je voudrais changer l'hydratant,routine_modification
+Peux-tu adapter ma routine ?,routine_modification
+Je veux ajuster ma routine skincare,routine_modification
+Je voudrais remplacer le traitement,routine_modification
+Peux-tu changer un des produits recommandés ?,routine_modification
+Je souhaite une modification de ma routine,routine_modification
+Je voudrais une autre option pour le sérum,routine_modification
+Je veux remplacer ce produit par un autre,routine_modification
+Peux-tu adapter ma routine du soir ?,routine_modification
+Je voudrais modifier la routine proposée,routine_modification
+Je veux changer un produit qui m'irrite,routine_modification
+Peux-tu me proposer une alternative à mon hydratant ?,routine_modification
+Je voudrais remplacer le nettoyant,routine_modification
+Je veux changer le soin du soir,routine_modification
+Peux-tu modifier ma routine en gardant le reste ?,routine_modification
+Je souhaite changer seulement le sérum,routine_modification
+Je voudrais une alternative pour mon traitement,routine_modification
+Peux-tu remplacer ce soin ?,routine_modification
+Je veux une autre routine du soir,routine_modification
+Je voudrais adapter un produit à ma peau,routine_modification
+Peux-tu changer le produit recommandé ?,routine_modification
+Je veux modifier une partie de ma routine,routine_modification
+Je souhaite remplacer mon soin,routine_modification
+Je voudrais un autre produit pour cette étape,routine_modification
+Peux-tu me donner une alternative ?,routine_modification
+Je veux ajuster ma routine du matin,routine_modification
+Je voudrais changer l'un des produits,routine_modification
+Peux-tu remplacer ce produit par quelque chose de plus adapté ?,routine_modification
+Je veux modifier ma routine actuelle,routine_modification
+Je souhaite une alternative au produit recommandé,routine_modification
+Je voudrais changer le produit utilisé le soir,routine_modification
+"Merci, au revoir",goodbye
+Au revoir,goodbye
+Merci beaucoup,goodbye
+À bientôt,goodbye
+"C'est tout, merci",goodbye
+Merci pour votre aide,goodbye
+Merci pour les conseils,goodbye
+"Merci, c'est parfait",goodbye
+Merci beaucoup pour votre aide,goodbye
+Bonne journée,goodbye
+Bonne soirée,goodbye
+À la prochaine,goodbye
+"Merci, à bientôt",goodbye
+Je vous remercie,goodbye
+Merci pour tout,goodbye
+Merci pour les recommandations,goodbye
+"Merci, je vais essayer",goodbye
+"D'accord, merci",goodbye
+"Très bien, merci",goodbye
+"Merci beaucoup, au revoir",goodbye
+Au revoir et merci,goodbye
+À bientôt et merci,goodbye
+Merci pour ces conseils,goodbye
+"Merci, bonne journée",goodbye
+"Merci, bonne soirée",goodbye
+"C'est bon pour moi, merci",goodbye
+"Je n'ai plus de questions, merci",goodbye
+"Merci, c'est tout",goodbye
+"Merci pour votre aide, au revoir",goodbye
+"Je vais m'arrêter là, merci",goodbye
+À plus tard,goodbye
+À la prochaine fois,goodbye
+Merci encore,goodbye
+Merci pour votre réponse,goodbye
+"Très bien, au revoir",goodbye
+"D'accord, au revoir",goodbye
+Je vous remercie beaucoup,goodbye
+Merci pour votre temps,goodbye
+"C'est parfait, merci",goodbye
+"Tout est clair, merci",goodbye
+"Merci, j'ai compris",goodbye
+Merci pour l'aide,goodbye
+"Merci beaucoup, à bientôt",goodbye
+"Au revoir, merci",goodbye
+Bonne continuation,goodbye
+Merci et à bientôt,goodbye
+"Je vais essayer, merci",goodbye
+"Merci, je n'ai plus besoin d'aide",goodbye
+"Merci, c'est terminé",goodbye
+Hi,greeting
+Hey,greeting
+Good morning,greeting
+Good afternoon,greeting
+Good evening,greeting
+Hi there,greeting
+"Hello, can you help me?",greeting
+"Hi, I need some advice",greeting
+"Hello, I'd like some tips",greeting
+"Hey, I'm just getting started",greeting
+"Hi, I have a question about skincare",greeting
+"Good morning, I need help",greeting
+"Hello, nice to meet you",greeting
+"Hey there, how does this work?",greeting
+"Hi, can you assist me with my skin?",greeting
+"Hello, I'm new here",greeting
+"Good evening, can you help me out?",greeting
+"Hi, I'd like to start a routine",greeting
+Hello again,greeting
+"Hey, quick question",greeting
+"Hi, I'm looking for some help",greeting
+"Good morning, I have a skincare question",greeting
+"Hello, I need some guidance",greeting
+"Hi, is anyone there?",greeting
+"Hey, can we talk about my skin?",greeting
+"Hello, I'd like to know more",greeting
+"Hi, I need some recommendations",greeting
+"Good afternoon, could you help me?",greeting
+"Hey, I have a few questions",greeting
+"Hello, I'm excited to start",greeting
+"Hi, thanks for being here",greeting
+"Hey, I need some skincare help",greeting
+"Hello, let's get started",greeting
+"Hi, I'm ready when you are",greeting
+"Good morning, hope you can help",greeting
+"Hey, first time using this",greeting
+"Hello, I need some support",greeting
+"Hi, glad to be here",greeting
+"Hello, can we begin?",greeting
+"Hey, I'd like some assistance",greeting
+"Hi, I need advice on my skin",greeting
+"Good evening, I have a question",greeting
+"Hello, I could use some help",greeting
+"Hi, hoping you can guide me",greeting
+"Hey, let's talk skincare",greeting
+"Hello, I have skin concerns",greeting
+"Hi, I need your expertise",greeting
+"Good morning, ready to chat",greeting
+"Hey, happy to be here",greeting
+I want a routine for my skin,routine_request
+Can you build me a routine?,routine_request
+I'd like a skincare routine,routine_request
+Give me a routine suited to my skin,routine_request
+I'm looking for a morning and evening routine,routine_request
+Can you suggest a routine for me?,routine_request
+I need a skincare routine,routine_request
+Could you create a routine for my skin type?,routine_request
+I want a personalized routine,routine_request
+Build me a skincare plan,routine_request
+Can you recommend a full routine?,routine_request
+I'd like a daily skincare routine,routine_request
+Please suggest a routine for me,routine_request
+I need help with a routine,routine_request
+Can you put together a routine for me?,routine_request
+I want a morning routine,routine_request
+I want an evening routine,routine_request
+Give me a complete skincare routine,routine_request
+Could you design a routine for my skin?,routine_request
+I need a step by step routine,routine_request
+Can you help me build a routine?,routine_request
+I'd like a routine that fits my skin,routine_request
+Please create a skincare routine for me,routine_request
+I want a routine for oily skin,routine_request
+I want a routine for dry skin,routine_request
+Can I get a personalized routine?,routine_request
+I need a new skincare routine,routine_request
+"Give me a routine, please",routine_request
+Can you set up a routine for me?,routine_request
+I'd love a routine suggestion,routine_request
+What routine should I follow?,routine_request
+Suggest a routine that works for me,routine_request
+I need morning and evening steps,routine_request
+Can you plan my skincare routine?,routine_request
+I want a routine adapted to my needs,routine_request
+Help me create a routine,routine_request
+I'd like your routine recommendation,routine_request
+Can you build a full AM/PM routine?,routine_request
+"I need a routine, can you help?",routine_request
+Give me a tailored routine,routine_request
+I want a simple skincare routine,routine_request
+Please recommend a routine,routine_request
+Can you propose a routine for me?,routine_request
+I need a routine that suits my skin,routine_request
+I'd like a routine built around my concerns,routine_request
+Suggest me a daily routine,routine_request
+Can you give me a skincare plan?,routine_request
+I want steps for my routine,routine_request
+Please build a routine based on my profile,routine_request
+I need routine suggestions,routine_request
+I have oily skin,profile_info
+My skin is dry,profile_info
+I have combination skin,profile_info
+My skin is sensitive,profile_info
+I have breakouts,profile_info
+I have acne,profile_info
+My skin feels dehydrated,profile_info
+I have dark spots,profile_info
+My skin is prone to redness,profile_info
+I have large pores,profile_info
+My skin is normal,profile_info
+I have wrinkles,profile_info
+My skin gets irritated easily,profile_info
+I have oily and acne-prone skin,profile_info
+My skin is very sensitive,profile_info
+I have dry patches,profile_info
+My skin tends to be shiny,profile_info
+I have blackheads,profile_info
+My skin is dull,profile_info
+I have uneven skin tone,profile_info
+My skin feels tight,profile_info
+I have rosacea,profile_info
+My skin is sensitive and dry,profile_info
+I have oily skin with acne,profile_info
+My skin reacts to most products,profile_info
+I have combination skin with acne,profile_info
+My skin is aging,profile_info
+I have fine lines,profile_info
+My skin is dehydrated but oily,profile_info
+I have sensitive and reactive skin,profile_info
+My skin type is oily,profile_info
+My skin type is dry,profile_info
+I struggle with breakouts,profile_info
+I have hyperpigmentation,profile_info
+My pores are quite visible,profile_info
+My skin gets red easily,profile_info
+I have some acne scars,profile_info
+My skin is a bit dull lately,profile_info
+"I have combination skin, oily in the T-zone",profile_info
+My skin feels rough,profile_info
+I have mild acne,profile_info
+My skin is sensitive to sun,profile_info
+I have dry and flaky skin,profile_info
+My skin is oily in summer,profile_info
+I have some redness on my cheeks,profile_info
+My skin is not very sensitive,profile_info
+I have normal to dry skin,profile_info
+My skin is oily and shiny,profile_info
+I have some fine lines around my eyes,profile_info
+My skin is a bit sensitive,profile_info
+What product do you recommend?,product_recommendation
+Which serum suits my skin?,product_recommendation
+Can you recommend a product?,product_recommendation
+I'm looking for a good cleanser,product_recommendation
+Which moisturizer do you recommend?,product_recommendation
+What product should I use for acne?,product_recommendation
+Can you suggest a good sunscreen?,product_recommendation
+What serum should I try?,product_recommendation
+I need a product recommendation,product_recommendation
+Which cream works for dry skin?,product_recommendation
+Can you recommend a toner?,product_recommendation
+What should I use for my breakouts?,product_recommendation
+I'm looking for a good moisturizer,product_recommendation
+Which product helps with dark spots?,product_recommendation
+Can you suggest an exfoliant?,product_recommendation
+What product is best for oily skin?,product_recommendation
+I need a recommendation for a night cream,product_recommendation
+Which cleanser is best for me?,product_recommendation
+Can you recommend something for redness?,product_recommendation
+What product helps with pores?,product_recommendation
+I'm searching for a good eye cream,product_recommendation
+Which sunscreen do you suggest?,product_recommendation
+Can you recommend a gentle cleanser?,product_recommendation
+What should I use for sensitive skin?,product_recommendation
+I need a good product for hydration,product_recommendation
+Which serum reduces wrinkles?,product_recommendation
+Can you suggest a product with niacinamide?,product_recommendation
+What cream do you recommend for me?,product_recommendation
+I'm looking for an anti-aging product,product_recommendation
+Which product suits combination skin?,product_recommendation
+Can you recommend a treatment for acne?,product_recommendation
+What's a good product for my skin type?,product_recommendation
+I need something for dehydrated skin,product_recommendation
+Which product would you suggest?,product_recommendation
+Can you find me a suitable moisturizer?,product_recommendation
+What's the best product for my concerns?,product_recommendation
+I'm looking for a product with hyaluronic acid,product_recommendation
+Which product targets dark spots?,product_recommendation
+Can you recommend a gentle exfoliant?,product_recommendation
+What product fits my routine?,product_recommendation
+I need a product suggestion for my skin,product_recommendation
+Which serum would work best for me?,product_recommendation
+Can you recommend a product for oily skin?,product_recommendation
+What moisturizer suits sensitive skin?,product_recommendation
+I'm looking for a lightweight sunscreen,product_recommendation
+Which product helps with texture?,product_recommendation
+Can you recommend something affordable?,product_recommendation
+What product tackles acne scars?,product_recommendation
+"I need a recommendation, please",product_recommendation
+Which product matches my profile?,product_recommendation
+Can you suggest the right cleanser for me?,product_recommendation
+Why do you recommend this routine?,routine_explanation
+Why did you choose these products?,routine_explanation
+Why is this product recommended?,routine_explanation
+Can you explain this recommendation?,routine_explanation
+Why is this serum suited to my skin?,routine_explanation
+Why did you choose this moisturizer?,routine_explanation
+Can you tell me why this fits my profile?,routine_explanation
+Why does this routine work for me?,routine_explanation
+Explain why you picked this product,routine_explanation
+Why this cleanser specifically?,routine_explanation
+Can you justify this recommendation?,routine_explanation
+Why is this the right choice for me?,routine_explanation
+What's the reasoning behind this routine?,routine_explanation
+Why did you select this cream?,routine_explanation
+Can you explain why this suits my skin type?,routine_explanation
+Why is this ingredient recommended?,routine_explanation
+What makes this product a good fit?,routine_explanation
+Why does this routine match my needs?,routine_explanation
+Can you break down why you chose this?,routine_explanation
+Why is this treatment right for me?,routine_explanation
+Explain the logic behind this recommendation,routine_explanation
+Why should I use this product?,routine_explanation
+Can you clarify why this works for my skin?,routine_explanation
+Why is this the best option?,routine_explanation
+What's the reason for this choice?,routine_explanation
+Why did the system pick this product?,routine_explanation
+Can you explain the benefits of this choice?,routine_explanation
+Why is this routine tailored to me?,routine_explanation
+Help me understand this recommendation,routine_explanation
+Why does this ingredient help my skin?,routine_explanation
+Can you explain your reasoning?,routine_explanation
+Why is this product suitable for my concerns?,routine_explanation
+What's behind this suggestion?,routine_explanation
+Why did you pick this serum for me?,routine_explanation
+Can you explain how this fits my profile?,routine_explanation
+Why is this cream a good match?,routine_explanation
+What's the rationale for this recommendation?,routine_explanation
+Why this specific product?,routine_explanation
+Can you explain the purpose of this step?,routine_explanation
+Why does this help with my skin issue?,routine_explanation
+I'd like to understand this choice,routine_explanation
+Why was this product selected for me?,routine_explanation
+Can you explain why this is effective?,routine_explanation
+Why is this the recommended option?,routine_explanation
+What led to this recommendation?,routine_explanation
+Can you explain this choice in detail?,routine_explanation
+Why does this product address my concern?,routine_explanation
+I want to know why this was chosen,routine_explanation
+Can you walk me through this reasoning?,routine_explanation
+Why is this the suggested product?,routine_explanation
+I want to change my routine,routine_modification
+Can you change my evening routine?,routine_modification
+I'd like to modify a product in my routine,routine_modification
+I want to replace my serum,routine_modification
+Can you change my moisturizer?,routine_modification
+I'd like a different cleanser,routine_modification
+Can you swap this product?,routine_modification
+I want to update my routine,routine_modification
+Can you replace this product with another one?,routine_modification
+I'd like to adjust my routine,routine_modification
+Can you find an alternative product?,routine_modification
+I want a different moisturizer,routine_modification
+Can you change this step in my routine?,routine_modification
+I'd like another option for this product,routine_modification
+Can we modify my morning routine?,routine_modification
+I want to switch products,routine_modification
+Can you suggest a replacement?,routine_modification
+I'd like to try a different serum,routine_modification
+Can you update my skincare routine?,routine_modification
+I want to remove this product,routine_modification
+Can you replace my sunscreen?,routine_modification
+I'd like a new recommendation for this step,routine_modification
+Can you change the treatment step?,routine_modification
+I want an alternative to this cream,routine_modification
+Can you modify my current routine?,routine_modification
+I'd like to swap out this cleanser,routine_modification
+Can you find something else for me?,routine_modification
+I want to change this product,routine_modification
+Can you give me another option?,routine_modification
+I'd like to replace my toner,routine_modification
+Can you adjust my evening routine?,routine_modification
+I want a substitute product,routine_modification
+Can you change my current serum?,routine_modification
+I'd like to modify this recommendation,routine_modification
+Can you find a better fit for me?,routine_modification
+I want to try something different,routine_modification
+Can you replace this step with another product?,routine_modification
+I'd like an alternative moisturizer,routine_modification
+Can you update this part of my routine?,routine_modification
+I want to switch my night cream,routine_modification
+Can you offer another product choice?,routine_modification
+I'd like a different treatment,routine_modification
+Can you change my product recommendation?,routine_modification
+I want to explore other options,routine_modification
+Can you replace this with something gentler?,routine_modification
+I'd like a new product suggestion,routine_modification
+Can you modify my skincare plan?,routine_modification
+I want a different option for my routine,routine_modification
+Can you change this recommendation?,routine_modification
+I'd like to update my product choice,routine_modification
+"Thanks, goodbye",goodbye
+Goodbye,goodbye
+Thank you very much,goodbye
+See you soon,goodbye
+"That's all, thanks",goodbye
+Thanks for your help,goodbye
+Bye,goodbye
+"Thanks a lot, bye",goodbye
+"Goodbye, thank you",goodbye
+"Thank you, see you",goodbye
+"That will be all, thanks",goodbye
+"Thanks, that's everything",goodbye
+See you later,goodbye
+Thank you for everything,goodbye
+"Bye, thanks for the help",goodbye
+"That's all I needed, thanks",goodbye
+"Thanks, I'm done for now",goodbye
+Goodbye and thank you,goodbye
+"Thanks, take care",goodbye
+"I'm all set, thank you",goodbye
+"Thank you, bye for now",goodbye
+"That's it, thanks a lot",goodbye
+"Thanks, goodbye for now",goodbye
+"Alright, thank you, bye",goodbye
+"Thanks, that's all I needed",goodbye
+"Goodbye, appreciate the help",goodbye
+"Thank you so much, bye",goodbye
+"Bye, see you next time",goodbye
+"That's everything, thank you",goodbye
+"Thanks, I'll be off now",goodbye
+"Goodbye, talk soon",goodbye
+"Thank you, I'm done",goodbye
+"Thanks for your time, bye",goodbye
+"See you, thanks again",goodbye
+"Alright, goodbye",goodbye
+"Thanks, that's all",goodbye
+"Bye, thanks for everything",goodbye
+"Thank you, catch you later",goodbye
+"That's all for today, thanks",goodbye
+"Thanks a bunch, goodbye",goodbye
+"Okay, thank you, goodbye",goodbye
+"Thanks, I appreciate it, bye",goodbye
+"Goodbye, thanks for the tips",goodbye
+"Thank you, see you around",goodbye
+"Bye now, thanks",goodbye
+"Thanks, that's all for now",goodbye
+"Alright then, goodbye",goodbye
+"Thank you, until next time",goodbye
+"That's it, goodbye",goodbye
+"Thanks so much, take care",goodbye

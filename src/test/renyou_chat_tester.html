@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>AI Skin Assistant</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg-1: #1b1630;
+    --bg-2: #241a3e;
+    --bg-3: #150f26;
+    --card: #ffffff;
+    --card-soft: #f7f2f7;
+    --ink: #1c1730;
+    --ink-soft: #6b6580;
+    --line: #e8e2ee;
+    --accent: #c85a2e;
+    --accent-dark: #a94a24;
+    --grad-a: #9c86ee;
+    --grad-b: #e88f86;
+    --bubble-user: #241c3f;
+    --bubble-bot: #fbf3f0;
+    --ok: #3f9a5c;
+    --err: #c94444;
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+
+  html,
+  body{
+    height: 100%;
+    margin: 0;
+  }
+
+  body{
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+
+    background:
+      radial-gradient(
+        1100px 600px at 85% -10%,
+        rgba(200,90,46,0.20),
+        transparent 60%
+      ),
+      radial-gradient(
+        900px 700px at -10% 40%,
+        rgba(156,134,238,0.18),
+        transparent 55%
+      ),
+      linear-gradient(
+        160deg,
+        var(--bg-1),
+        var(--bg-2) 55%,
+        var(--bg-3)
+      );
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1,
+  h2,
+  h3{
+    font-family: "Poppins", "Inter", sans-serif;
+    margin: 0;
+  }
+
+  /* =========================================================
+     TOP BAR
+  ========================================================= */
+
+  .topbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px clamp(20px, 5vw, 56px);
+  }
+
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+
+    padding: 8px 18px 8px 10px;
+    border-radius: 999px;
+  }
+
+  .brand svg{
+    width: 26px;
+    height: 26px;
+  }
+
+  .brand span{
+    color: #f2eefb;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+  }
+
+  /* API STATUS */
+
+  .env-pill{
+    color: #d8d0ec;
+    font-size: 13px;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    padding: 7px 14px;
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .env-pill .dot{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+
+    background: var(--ok);
+    box-shadow: 0 0 0 3px rgba(63,154,92,0.25);
+  }
+
+  .env-pill.offline .dot{
+    background: var(--err);
+    box-shadow: 0 0 0 3px rgba(201,68,68,0.25);
+  }
+
+  /* =========================================================
+     MAIN LAYOUT
+  ========================================================= */
+
+  main{
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: minmax(0, 760px);
+
+    gap: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+      20px
+      clamp(20px, 5vw, 56px)
+      56px;
+  }
+
+  /* =========================================================
+     INTRODUCTION
+  ========================================================= */
+
+  .intro h1{
+    color: #f4f1fb;
+
+    font-size: clamp(30px, 3.6vw, 42px);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  .intro h1 em{
+    font-style: normal;
+
+    color: transparent;
+
+    background:
+      linear-gradient(
+        100deg,
+        var(--grad-a),
+        var(--grad-b)
+      );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .intro p{
+    color: #beb6d6;
+    font-size: 15.5px;
+    line-height: 1.6;
+
+    margin-top: 16px;
+    max-width: 40ch;
+  }
+
+  .intro .tag{
+    display: inline-block;
+
+    color: #cdbdf7;
+
+    background: rgba(156,134,238,0.14);
+    border: 1px solid rgba(156,134,238,0.35);
+
+    font-size: 12.5px;
+    font-weight: 600;
+
+    padding: 6px 12px;
+    border-radius: 999px;
+
+    margin-bottom: 18px;
+  }
+
+  .intro-chips{
+    margin-top: 26px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .intro-chips button{
+    text-align: left;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    color: #e7e1f7;
+
+    padding: 11px 14px;
+    border-radius: 12px;
+
+    font-size: 13.5px;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+      background .15s ease,
+      border-color .15s ease,
+      transform .1s ease;
+  }
+
+  .intro-chips button:hover{
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.22);
+  }
+
+  .intro-chips button:active{
+    transform: scale(0.98);
+  }
+
+  /* =========================================================
+     CHAT CARD
+  ========================================================= */
+
+  .chat-card{
+    background: var(--card);
+
+    width: 100%;
+
+    border-radius: 24px;
+
+    box-shadow:
+      0 30px 70px rgba(10, 6, 30, 0.45);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    max-height: min(720px, 82vh);
+  }
+
+  /* CHAT HEADER */
+
+  .chat-head{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 20px 22px 14px;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+  .chat-head h2{
+    font-size: 17px;
+  }
+
+  .chat-head .sub{
+    color: var(--ink-soft);
+    font-size: 12.5px;
+
+    margin-top: 4px;
+  }
+
+  .badge{
+    flex-shrink: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+    font-size: 11.5px;
+
+    color: #fff;
+
+    padding: 7px 14px;
+    border-radius: 999px;
+
+    background:
+      linear-gradient(
+        100deg,
+        var(--grad-a),
+        var(--grad-b)
+      );
+
+    white-space: nowrap;
+  }
+
+  /* =========================================================
+     SETTINGS
+  ========================================================= */
+
+  .settings{
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    background: var(--card-soft);
+
+    border-bottom: 1px solid var(--line);
+
+    flex-wrap: wrap;
+  }
+
+  .settings label{
+    font-size: 11.5px;
+
+    color: var(--ink-soft);
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex: 1;
+    min-width: 160px;
+  }
+
+  .settings input[type="text"]{
+    flex: 1;
+
+    border: 1px solid var(--line);
+
+    border-radius: 8px;
+
+    padding: 6px 9px;
+
+    font-size: 12.5px;
+
+    font-family: inherit;
+
+    color: var(--ink);
+
+    background: #fff;
+  }
+
+  .settings input[type="text"]:focus{
+    outline: 2px solid rgba(156,134,238,0.45);
+    outline-offset: 1px;
+  }
+
+  .icon-btn{
+    border: 1px solid var(--line);
+
+    background: #fff;
+
+    color: var(--ink-soft);
+
+    font-size: 12px;
+
+    font-family: inherit;
+    font-weight: 600;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+  }
+
+  .icon-btn:hover{
+    border-color: #cfc6e6;
+    color: var(--ink);
+  }
+
+  /* =========================================================
+     MESSAGES
+  ========================================================= */
+
+  .messages{
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    background:
+      radial-gradient(
+        600px 300px at 10% 0%,
+        rgba(156,134,238,0.05),
+        transparent 60%
+      );
+  }
+
+  .msg{
+    max-width: 82%;
+
+    padding: 12px 15px;
+
+    border-radius: 16px;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    white-space: pre-wrap;
+  }
+
+  .msg.user{
+    align-self: flex-end;
+
+    background: var(--bubble-user);
+    color: #f4f1fb;
+
+    border-bottom-right-radius: 4px;
+  }
+
+  .msg.bot{
+    align-self: flex-start;
+
+    background: var(--bubble-bot);
+    color: #3a3350;
+
+    border: 1px solid #f2e2dc;
+
+    border-bottom-left-radius: 4px;
+  }
+
+  .msg.bot strong.who{
+    display: block;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: var(--accent-dark);
+
+    margin-bottom: 4px;
+
+    letter-spacing: 0.2px;
+  }
+
+  .msg.bot .source-list{
+    border-top: 1px solid #e8d9d3;
+    margin-top: 10px;
+    padding-top: 8px;
+    font-size: 11.5px;
+  }
+
+  .msg.bot .source-list strong{
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .msg.bot .source-list a{
+    color: var(--accent-dark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .msg.bot .source-list li + li{
+    margin-top: 5px;
+  }
+
+  .msg.system{
+    align-self: center;
+
+    background: transparent;
+
+    color: var(--ink-soft);
+
+    font-size: 12px;
+
+    border: 1px dashed var(--line);
+  }
+
+  .msg.error{
+    align-self: center;
+
+    background: #fdeceb;
+
+    color: #a13a34;
+
+    border: 1px solid #f4c6c1;
+
+    font-size: 12.5px;
+  }
+
+  /* =========================================================
+     TYPING INDICATOR
+  ========================================================= */
+
+  .typing{
+    align-self: flex-start;
+
+    display: flex;
+
+    gap: 4px;
+
+    padding: 14px 16px;
+
+    background: var(--bubble-bot);
+
+    border-radius: 16px;
+
+    border-bottom-left-radius: 4px;
+  }
+
+  .typing span{
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #d9a293;
+
+    animation: bounce 1.1s infinite ease-in-out;
+  }
+
+  .typing span:nth-child(2){
+    animation-delay: .15s;
+  }
+
+  .typing span:nth-child(3){
+    animation-delay: .3s;
+  }
+
+  @keyframes bounce{
+    0%, 60%, 100%{
+      transform: translateY(0);
+      opacity: .5;
+    }
+
+    30%{
+      transform: translateY(-4px);
+      opacity: 1;
+    }
+  }
+
+  /* =========================================================
+     MESSAGE COMPOSER
+  ========================================================= */
+
+  .composer{
+    display: flex;
+
+    gap: 10px;
+
+    padding: 16px 22px;
+
+    border-top: 1px solid var(--line);
+  }
+
+  .composer input{
+    flex: 1;
+
+    border: 1px solid var(--line);
+
+    border-radius: 12px;
+
+    padding: 12px 14px;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    color: var(--ink);
+  }
+
+  .composer input:focus{
+    outline: 2px solid rgba(200,90,46,0.30);
+    outline-offset: 1px;
+  }
+
+  .composer button{
+    background: var(--accent);
+
+    color: #fff;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 0 20px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-weight: 600;
+
+    font-size: 13.5px;
+
+    cursor: pointer;
+
+    transition: background .15s ease;
+  }
+
+  .composer button:hover{
+    background: var(--accent-dark);
+  }
+
+  .composer button:disabled{
+    background: #e3ccc2;
+    cursor: not-allowed;
+  }
+
+  /* =========================================================
+     DEBUG PANEL
+  ========================================================= */
+
+  .debug{
+    border-top: 1px solid var(--line);
+
+    background: var(--card-soft);
+
+    padding: 14px 22px 18px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    font-size: 12px;
+
+    max-height: 220px;
+
+    overflow-y: auto;
+  }
+
+  .debug .cell{
+    background: #fff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 10px;
+
+    padding: 8px 10px;
+  }
+
+  .debug .cell b{
+    display: block;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    color: var(--ink-soft);
+
+    margin-bottom: 3px;
+
+    font-weight: 700;
+  }
+
+  .debug .cell span{
+    color: var(--ink);
+
+    word-break: break-word;
+  }
+
+  .debug .cell.full{
+    grid-column: 1 / -1;
+  }
+
+  /* =========================================================
+     FOOTER
+  ========================================================= */
+
+  footer{
+    text-align: center;
+
+    color: #7c7396;
+
+    font-size: 12px;
+
+    padding: 0 20px 26px;
+  }
+
+  /* =========================================================
+     RESPONSIVE
+  ========================================================= */
+
+  @media (max-width: 860px){
+
+    main{
+      grid-template-columns: 1fr;
+    }
+
+    .intro{
+      text-align: center;
+    }
+
+    .intro p{
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .intro-chips{
+      align-items: center;
+    }
+
+    .intro-chips button{
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       TOP BAR
+  ======================================================== -->
+
+  <div class="topbar">
+
+    <div class="brand">
+
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+
+        <path
+          d="M24 24c0-6 -5-11-11-11s-11 5-11 11 5 11 11 11c0-6 5-11 11-11z"
+          fill="#e8e2ee"
+        />
+
+        <path
+          d="M24 24c0-6 5-11 11-11s11 5 11 11-5 11-11 11c0-6-5-11-11-11z"
+          fill="#e8e2ee"
+        />
+
+        <path
+          d="M24 24c-6 0-11-5-11-11s5-11 11-11 11 5 11 11c-6 0-11 0-11 0z"
+          fill="#cbbdf0"
+        />
+
+        <path
+          d="M24 24c-6 0-11 5-11 11s5 11 11 11 11-5 11-11c-6 0-11-5-11-11z"
+          fill="#cbbdf0"
+        />
+
+      </svg>
+
+      <span>Skin Assistant</span>
+
+    </div>
+
+
+    <!-- API STATUS -->
+
+    <div class="env-pill" id="envPill">
+
+      <span class="dot"></span>
+
+      <span id="envLabel">
+        Checking API...
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       MAIN CONTENT
+  ======================================================== -->
+
+  <main>
+
+    <!-- INTRODUCTION -->
+
+    <!--
+    <div class="intro">
+
+      <span class="tag">
+        Testing Environment
+      </span>
+
+      <h1>
+        Chat with
+        <em>your assistant</em>
+        before connecting it to the product.
+      </h1>
+
+<div class="intro-chips">
+
+<div class="scenario-title" style=" color: palevioletred">
+    English
+  </div>
+
+
+  
+  <button
+    type="button"
+    data-msg="Hi"
+  >
+    1. Hi
+  </button>
+
+
+  <button
+    type="button"
+    data-msg="I have oily and acne-prone skin"
+  >
+    3. I have oily and acne-prone skin
+  </button>
+
+  <button
+    type="button"
+    data-msg="Can you recommend a skincare routine for me?"
+  >
+    4. Recommend a routine
+  </button>
+
+
+  <button
+    type="button"
+    data-msg="Can you modify my skincare plan?"
+  >
+    6. Modify my routine
+  </button>
+
+
+  <button
+    type="button"
+    data-msg="What is the capital of Japan?"
+  >
+    8. Out of domain
+  </button>
+
+    <button
+    type="button"
+    data-msg="I have severe acne with painful and inflamed spots"
+  >
+    7. Severe acne
+  </button>
+
+  <button
+    type="button"
+    data-msg="Goodbye"
+  >
+    9. Goodbye
+  </button>
+
+<div class="scenario-title" style="color: palevioletred">
+  RenYou + Skin Knowledge
+</div>
+
+<button
+  type="button"
+  data-msg="I have oily skin and acne. What does the EuroGuiDerm guideline say, then build my RenYou morning and evening routine?"
+>
+  Acne + personalized routine
+</button>
+
+<button
+  type="button"
+  data-msg="I have sensitive, dry skin with eczema. What does the pediatric review say about skin care, and please build my RenYou morning and evening routine?"
+>
+  Eczema + personalized routine
+</button>
+
+<button
+  type="button"
+  data-msg="J'ai une peau mixte avec des taches et du melasma. Que rapporte l'etude sur les ecrans teintes, et integre une protection solaire dans ma routine RenYou du matin ?"
+>
+  Melasma + routine RenYou
+</button>
+
+<div class="scenario-title" style=" color: palevioletred">
+</div>
+
+
+  
+  <button
+    type="button"
+    data-msg="Hello"
+  >
+    1. Hello
+  </button>
+
+  <button
+    type="button"
+    data-msg="I am pregnant and I have dry skin "
+  >
+    2. I am pregnant
+  </button>
+
+
+
+  <button
+    type="button"
+    data-msg="Can you recommend a skincare routine for me?"
+  >
+    4. Recommend a routine
+  </button>
+
+
+  <div  class="scenario-title french-title" style=" color: palevioletred">
+   Français
+  </div>
+
+  <button
+    type="button"
+    data-msg="Bonjour"
+  >
+    1. Bonjour
+  </button>
+
+
+  <button
+    type="button"
+    data-msg="J'ai la peau grasse avec des imperfections"
+  >
+    3. Ma peau
+  </button>
+
+  <button
+    type="button"
+    data-msg="Pouvez-vous me proposer une routine adaptée à ma peau ?"
+  >
+    4. Proposer une routine
+  </button>
+
+ 
+
+
+  
+
+  <button
+    type="button"
+    data-msg="Quelle est la capitale du Japon ?"
+  >
+    8. Hors domaine
+  </button>
+
+</div>
+
+    </div>
+
+    -->
+
+    <!-- =====================================================
+         CHAT CARD
+    ====================================================== -->
+
+    <section class="chat-card">
+
+      <!-- CHAT HEADER -->
+
+      <div class="chat-head">
+
+        <div>
+
+          <h2>RenYou Assistant</h2>
+
+          <p class="sub">
+            Skin profile, product recommendations, routines and documented skin knowledge
+          </p>
+
+        </div>
+
+ 
+
+      </div>
+
+
+      <!-- SETTINGS -->
+
+      <div class="settings">
+
+        <label>
+
+          API URL
+
+          <input
+            type="text"
+            id="apiBase"
+            value="http://localhost:5000"
+          />
+
+        </label>
+
+        <button
+          class="icon-btn"
+          id="resetBtn"
+          type="button"
+        >
+          Reset
+        </button>
+
+      </div>
+
+
+      <!-- CHAT MESSAGES -->
+
+      <div
+        class="messages"
+        id="messages"
+      >
+
+        <div class="msg system">
+          New session — send a message to start.
+        </div>
+
+      </div>
+
+
+      <!-- MESSAGE INPUT -->
+
+      <form
+        class="composer"
+        id="composer"
+      >
+
+        <input
+          id="messageInput"
+          type="text"
+          autocomplete="off"
+          placeholder="Type a message... (e.g. I have dry and sensitive skin)"
+        />
+
+        <button type="submit">
+          Send
+        </button>
+
+      </form>
+
+
+      <!-- DEBUG PANEL -->
+
+      <div
+        class="debug"
+        id="debugPanel"
+        hidden
+      ></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    Internal testing interface — not intended for production.
+  </footer>
+
+
+<script>
+
+(function () {
+
+  /* =========================================================
+     DOM ELEMENTS
+  ========================================================= */
+
+  const messagesEl =
+    document.getElementById("messages");
+
+  const composerEl =
+    document.getElementById("composer");
+
+  const inputEl =
+    document.getElementById("messageInput");
+
+  const apiBaseEl =
+    document.getElementById("apiBase");
+
+  const debugPanel =
+    document.getElementById("debugPanel");
+
+  const resetBtn =
+    document.getElementById("resetBtn");
+
+  const envPill =
+    document.getElementById("envPill");
+
+  const envLabel =
+    document.getElementById("envLabel");
+
+
+  /* =========================================================
+     SESSION
+  ========================================================= */
+
+  let sessionId = null;
+
+
+  /* =========================================================
+     RESTORE API URL
+  ========================================================= */
+
+  try {
+
+    const savedBase =
+      localStorage.getItem("renyou_api_base");
+
+    if (savedBase) {
+      apiBaseEl.value = savedBase;
+    }
+
+  } catch (e) {
+    /* Ignore localStorage errors */
+  }
+
+
+  /* =========================================================
+     API URL CHANGE
+  ========================================================= */
+
+  apiBaseEl.addEventListener(
+    "change",
+    () => {
+
+      try {
+
+        localStorage.setItem(
+          "renyou_api_base",
+          apiBaseEl.value.trim()
+        );
+
+      } catch (e) {
+        /* Ignore localStorage errors */
+      }
+
+      checkHealth();
+
+    }
+  );
+
+
+  /* =========================================================
+     API BASE URL
+  ========================================================= */
+
+  function apiBase() {
+
+    return apiBaseEl.value
+      .trim()
+      .replace(/\/+$/, "");
+
+  }
+
+
+  /* =========================================================
+     SCROLL CHAT
+  ========================================================= */
+
+  function scrollToBottom() {
+
+    messagesEl.scrollTop =
+      messagesEl.scrollHeight;
+
+  }
+
+
+  /* =========================================================
+     ADD MESSAGE
+  ========================================================= */
+
+  function addMessage(
+    kind,
+    text,
+    who,
+    sources
+  ) {
+
+    const div =
+      document.createElement("div");
+
+    div.className =
+      "msg " + kind;
+
+
+    if (kind === "bot") {
+
+      const label =
+        document.createElement("strong");
+
+      label.className =
+        "who";
+
+      label.textContent =
+        who || "Assistant";
+
+      div.appendChild(label);
+
+      div.appendChild(
+        document.createTextNode(text)
+      );
+
+      if (Array.isArray(sources) && sources.length > 0) {
+        const sourceList = document.createElement("div");
+        sourceList.className = "source-list";
+
+        const heading = document.createElement("strong");
+        heading.textContent = "Sources";
+        sourceList.appendChild(heading);
+
+        const list = document.createElement("ul");
+        const seen = new Set();
+        sources.forEach((source) => {
+          if (!source || typeof source !== "object") {
+            return;
+          }
+
+          const title = source.title || "Document source";
+          const doi = source.doi || "";
+          const key = doi || title;
+          if (seen.has(key)) {
+            return;
+          }
+          seen.add(key);
+
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = title;
+          link.href = doi
+            ? "https://doi.org/" + doi
+            : (source.rights_evidence || "#");
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          item.appendChild(link);
+
+          const details = [
+            source.journal,
+            doi ? "DOI: " + doi : "",
+            source.page_or_section ? "Section: " + source.page_or_section : ""
+          ].filter(Boolean);
+          if (details.length > 0) {
+            item.appendChild(
+              document.createTextNode(" — " + details.join(" · "))
+            );
+          }
+
+          list.appendChild(item);
+        });
+
+        if (list.childElementCount > 0) {
+          sourceList.appendChild(list);
+          div.appendChild(sourceList);
+        }
+      }
+
+    } else {
+
+      div.textContent =
+        text;
+
+    }
+
+
+    messagesEl.appendChild(div);
+
+    scrollToBottom();
+
+    return div;
+
+  }
+
+
+  /* =========================================================
+     TYPING INDICATOR
+  ========================================================= */
+
+  function showTyping() {
+
+    const div =
+      document.createElement("div");
+
+    div.className =
+      "typing";
+
+    div.id =
+      "typingIndicator";
+
+    div.innerHTML =
+      "<span></span><span></span><span></span>";
+
+    messagesEl.appendChild(div);
+
+    scrollToBottom();
+
+  }
+
+
+  function hideTyping() {
+
+    const el =
+      document.getElementById(
+        "typingIndicator"
+      );
+
+    if (el) {
+      el.remove();
+    }
+
+  }
+
+
+  /* =========================================================
+     DEBUG PANEL
+  ========================================================= */
+
+  function renderDebug(data) {
+
+    if (!data) {
+
+      debugPanel.innerHTML = "";
+
+      return;
+
+    }
+
+
+    const cell =
+      (label, value) =>
+        `<div class="cell">
+          <b>${label}</b>
+          <span>${value}</span>
+        </div>`;
+
+
+    const profile =
+      data.profile || {};
+
+
+    debugPanel.innerHTML = [
+
+      cell(
+        "Intent",
+        data.intent ?? "—"
+      ),
+
+      cell(
+        "Language",
+        data.language ?? "—"
+      ),
+
+      cell(
+        "Confidence",
+        typeof data.confidence === "number"
+          ? data.confidence.toFixed(3)
+          : "—"
+      ),
+
+      cell(
+        "Auto-generated",
+        data.auto_generated
+          ? "Yes"
+          : "No"
+      ),
+
+      cell(
+        "Skin type",
+        profile.skin_type ?? "—"
+      ),
+
+      cell(
+        "Last product",
+        profile.last_product ?? "—"
+      ),
+
+      cell(
+        "Concerns",
+        (profile.concerns || [])
+          .join(", ") || "—"
+      ),
+
+      cell(
+        "Preferred ingredients",
+        (profile.preferred_ingredients || [])
+          .join(", ") || "—"
+      ),
+
+      cell(
+        "Detected entities",
+        JSON.stringify(
+          data.entities || {}
+        )
+      ),
+
+      cell(
+        "Session ID",
+        data.session_id ?? "—"
+      )
+
+    ].join("");
+
+  }
+
+
+  /* =========================================================
+     API HEALTH CHECK
+  ========================================================= */
+
+  async function checkHealth() {
+
+    envPill.classList.remove(
+      "offline"
+    );
+
+    envLabel.textContent =
+      "Checking API...";
+
+
+    try {
+
+      const res =
+        await fetch(
+          apiBase() + "/health",
+          {
+            method: "GET"
+          }
+        );
+
+
+      if (!res.ok) {
+        throw new Error(
+          "Bad status"
+        );
+      }
+
+
+      envLabel.textContent =
+        "API Connected";
+
+    }
+
+    catch (e) {
+
+      envPill.classList.add(
+        "offline"
+      );
+
+      envLabel.textContent =
+        "API Unreachable";
+
+    }
+
+  }
+
+
+  /* =========================================================
+     SEND MESSAGE
+  ========================================================= */
+
+  async function sendMessage(text) {
+
+    addMessage(
+      "user",
+      text
+    );
+
+
+    inputEl.value = "";
+
+    inputEl.focus();
+
+    showTyping();
+
+
+    const submitBtn =
+      composerEl.querySelector(
+        "button[type=submit]"
+      );
+
+    submitBtn.disabled = true;
+
+
+    try {
+
+      const res =
+        await fetch(
+          apiBase() + "/ml/chat",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body: JSON.stringify({
+              message: text,
+              session_id: sessionId
+            })
+
+          }
+        );
+
+
+      const data =
+        await res
+          .json()
+          .catch(() => null);
+
+
+      hideTyping();
+
+
+      if (!res.ok) {
+
+        const detail =
+          (
+            data &&
+            data.error
+          )
+            ? data.error
+            : `HTTP Error ${res.status}`;
+
+
+        addMessage(
+          "error",
+          detail
+        );
+
+        return;
+
+      }
+
+
+      sessionId =
+        data.session_id ||
+        sessionId;
+
+
+    //renderDebug(data);
+
+addMessage(
+  "bot",
+  data.response ||
+    "(empty response)",
+  "RenYou",
+  data.sources
+);
+
+
+      envPill.classList.remove(
+        "offline"
+      );
+
+      envLabel.textContent =
+        "API Connected";
+
+    }
+
+
+    catch (err) {
+
+      hideTyping();
+
+      envPill.classList.add(
+        "offline"
+      );
+
+      envLabel.textContent =
+        "API Unreachable";
+
+
+      addMessage(
+        "error",
+        "Unable to reach the API. " +
+        "Make sure Flask is running " +
+        "(`python -m src.api.app`), " +
+        "the API URL above is correct, " +
+        "and CORS is enabled on the server."
+      );
+
+    }
+
+
+    finally {
+
+      submitBtn.disabled =
+        false;
+
+    }
+
+  }
+
+
+  /* =========================================================
+     FORM SUBMISSION
+  ========================================================= */
+
+  composerEl.addEventListener(
+    "submit",
+    (e) => {
+
+      e.preventDefault();
+
+
+      const text =
+        inputEl.value.trim();
+
+
+      if (!text) {
+        return;
+      }
+
+
+      sendMessage(text);
+
+    }
+  );
+
+
+  /* =========================================================
+     QUICK MESSAGE BUTTONS
+  ========================================================= */
+
+  document
+    .querySelectorAll(
+      ".intro-chips button"
+    )
+    .forEach(
+      (btn) => {
+
+        btn.addEventListener(
+          "click",
+          () => {
+
+            inputEl.value =
+              btn.dataset.msg;
+
+            inputEl.focus();
+
+          }
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     RESET SESSION
+  ========================================================= */
+
+  resetBtn.addEventListener(
+    "click",
+    async () => {
+
+      if (sessionId) {
+
+        try {
+
+          await fetch(
+            apiBase() +
+              "/ml/chat/reset",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body: JSON.stringify({
+                session_id:
+                  sessionId
+              })
+
+            }
+          );
+
+        }
+
+        catch (e) {
+
+          /* Best effort */
+
+        }
+
+      }
+
+
+      sessionId = null;
+
+
+      messagesEl.innerHTML =
+        '<div class="msg system">' +
+        'Session reset — send a message to start.' +
+        '</div>';
+
+
+      debugPanel.innerHTML = "";
+
+    }
+  );
+
+
+  /* =========================================================
+     INITIAL API CHECK
+  ========================================================= */
+
+  checkHealth();
+
+})();
+
+</script>
+
+</body>
+</html>

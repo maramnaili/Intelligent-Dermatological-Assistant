@@ -1,0 +1,47 @@
+# Python environments and generated files
+.env/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local databases, caches, and logs
+data/rag/chroma/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+instance/
+
+# Scraped third-party product data and locally generated models
+/data/raw/products/
+/data/processed/parafendri_products_clean.csv
+/models/
+
+# Keep the first RAGAS baseline; ignore subsequently generated reports
+reports/rag-evaluation/ragas-*.json
+!reports/rag-evaluation/ragas-20261102T133356Z.json
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Original project brief supplied locally
+/Cahier_des_charges_extension_RenYou_ML_RAG_Agentic_AI.pdf

@@ -1,0 +1,150 @@
+{
+  "framework": "RAGAS",
+  "created_at_utc": "2026-11-02T13:33:56.649769+00:00",
+  "case_count": 6,
+  "language_counts": {
+    "fr": 3,
+    "en": 3
+  },
+  "top_k": 5,
+  "ragas_version": "0.4.3",
+  "generation_model": "qwen2.5:3b",
+  "evaluation_llm_model": "qwen2.5:3b",
+  "evaluation_embedding_model": "qwen3-embedding:0.6b",
+  "scores": {
+    "faithfulness": 0.3333333333333333,
+    "answer_relevancy": 0.29598055193212613,
+    "context_precision": 0.8942129629416108,
+    "context_recall": 0.6666666666666666
+  },
+  "per_case_scores": [
+    {
+      "id": "acne-en",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.8695731249383899,
+      "context_precision": 0.8874999999778125,
+      "context_recall": 0.5
+    },
+    {
+      "id": "acne-fr",
+      "language": "fr",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.999999999975,
+      "context_recall": 0.5
+    },
+    {
+      "id": "eczema-en",
+      "language": "en",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.99999999998,
+      "context_recall": 0.5
+    },
+    {
+      "id": "eczema-fr",
+      "language": "fr",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.999999999975,
+      "context_recall": 1.0
+    },
+    {
+      "id": "melasma-en",
+      "language": "en",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9063101866543668,
+      "context_precision": 0.47777777776185176,
+      "context_recall": 0.5
+    },
+    {
+      "id": "melasma-fr",
+      "language": "fr",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.99999999998,
+      "context_recall": 1.0
+    }
+  ],
+  "retrieval_checks": [
+    {
+      "id": "acne-en",
+      "language": "en",
+      "expected_source_dois": [
+        "10.1111/jdv.70331"
+      ],
+      "retrieved_source_dois": [
+        "10.1111/jdv.70331"
+      ],
+      "expected_source_hit": true,
+      "ragas_response": "RenYou summary (adapted from the cited sources): The EuroGuiDerm guideline provides recommendations for the treatment of acne based on evidence and consensus. It focuses on three key clinical questions: which types of acne and patient groups should isotretinoin be recommended versus systemic antibiotics, and with what strengths of recommendation. The guideline categorizes recommendations based on the strength of recommendation (Table 1), which considers efficacy, safety, patient preference, and the reliability of existing evidence. The update in 2025 prioritized these three key questions in its targeted update. Further details on the strength of recommendation grades and the methodology can be found in the full guideline text, detailed methods report, and comprehensive evidence report, which are accessible online."
+    },
+    {
+      "id": "acne-fr",
+      "language": "fr",
+      "expected_source_dois": [
+        "10.1111/jdv.70331"
+      ],
+      "retrieved_source_dois": [
+        "10.1111/jdv.70331"
+      ],
+      "expected_source_hit": true,
+      "ragas_response": "Synthèse RenYou adaptée des sources citées : Le guide EuroGuiDerm rapporte des recommandations pour le traitement de l'acné. C'est une mise à jour de la version de 2016. Il y a trois questions clés prioritaires pour cette mise à jour, notamment sur quelles sont les meilleures recommandations concernant la prise de isotretinoïne pour certains types d'acné et groupes patients par rapport aux antibiotiques systémiques. Le groupe a également pris en compte les aspects de l'efficacité, de la sécurité, de la préférence patient et la fiabilité de l'ensemble des preuves existantes (niveau d'efficacité) lors de la mise à jour. Le guide EuroGuiDerm est sous licence Creative Commons Attribution - NonCommercial - 4.0."
+    },
+    {
+      "id": "eczema-en",
+      "language": "en",
+      "expected_source_dois": [
+        "10.7759/cureus.69416"
+      ],
+      "retrieved_source_dois": [
+        "10.7759/cureus.69416"
+      ],
+      "expected_source_hit": true,
+      "ragas_response": "RenYou summary (adapted from the cited sources): The pediatric review report discusses the challenges pediatricians face in managing atopic dermatitis (AD) in children, including managing even mild cases. The review elaborates on the spectrum of available treatments and provides valuable insights for primary care providers to enhance the efficacy of AD management in pediatric populations.\n\nThe review also mentions that AD is a common inflammatory skin condition affecting 13% of children, with 60% of children experiencing remissions and relapses. Despite its prevalence, pediatricians may still send patients with mild eczema to dermatologists for management. \n\nFor treatment options, the review mentions the evolving therapeutic landscape which includes various therapies such as topical corticosteroids, immunomodulators, and biologicals like dupilumab. While these treatments have been found to be effective, they are not without their challenges, such as side effects and the need for concomitant use with topical steroids.\n\nThe overarching goal is to improve primary care provider management of AD, and the review emphasizes the importance of consistent and effective management strategies, especially for pediatric populations, to reduce the challenges encountered by pediatricians."
+    },
+    {
+      "id": "eczema-fr",
+      "language": "fr",
+      "expected_source_dois": [
+        "10.7759/cureus.69416"
+      ],
+      "retrieved_source_dois": [
+        "10.7759/cureus.69416"
+      ],
+      "expected_source_hit": true,
+      "ragas_response": "Synthèse RenYou adaptée des sources citées : La revue pédiatrique rapporte que l'adénovirus est un facteur important dans la prise en charge de la dermatite atopique chez les enfants. En outre, elle souligne que bien que de nombreux pédiatres soient encouragés à traiter même les cas de dermatite atopique légers, cela reste un défi. La revue souligne que les pédiatres ont besoin d'informations et d'outils supplémentaires pour améliorer la gestion de la dermatite atopique chez les enfants. Elle mentionne aussi des interventions telles que l'utilisation de la balsamide tacrolimus, des inhibiteurs JAK et des stratégies de gestion proactive. La revue ne fournit pas de résultats spécifiques sur la prise en charge, mais donne des informations générales sur la prise en charge de cette condition."
+    },
+    {
+      "id": "melasma-en",
+      "language": "en",
+      "expected_source_dois": [
+        "10.1111/jocd.70450"
+      ],
+      "retrieved_source_dois": [
+        "10.1111/jocd.70450"
+      ],
+      "expected_source_hit": true,
+      "ragas_response": "RenYou summary (adapted from the cited sources): The clinical study compared a tinted sunscreen containing visible light (VL) filters, specifically iron oxides and pigmentary titanium dioxide, to an untinted sunscreen for the purpose of preventing melasma relapse. The study found that after 5 months of use, the tinted sunscreen significantly reduced parameters such as lightness (∆L*), pigmentation (∆ITA°), and color contrast (∆E) compared to the untinted sunscreen. Both sunscreens were well tolerated by the participants and had similar protection against UV radiation. The tinted sunscreen, containing the mentioned VL filters, showed reductions in these parameters without a significant difference between groups, indicating its effectiveness in reducing melasma relapse. The clinical findings suggest that a tinted sunscreen could be more effective in preventing melasma pigmentation and darkening compared to an untinted sunscreen."
+    },
+    {
+      "id": "melasma-fr",
+      "language": "fr",
+      "expected_source_dois": [
+        "10.1111/jocd.70450"
+      ],
+      "retrieved_source_dois": [
+        "10.1111/jocd.70450"
+      ],
+      "expected_source_hit": true,
+      "ragas_response": "Synthèse RenYou adaptée des sources citées : L'étude clinique comparait les effets d'un écran solaire teinté protégeant contre la lumière visible (VL) et un écran solaire teinté normal en prévenant les relapses du mélasma chez des patients de la région Sud de la France durant l'été. Les résultats de l'étude suggèrent que le tinté du SPF 50+ Golden tinted de Bioderma, qui contient des filtres contre la lumière visible (compris dans la protection contre la lumière visible, ou VL, pVL protection factor 66) et des filtres UV (compris dans la protection contre les UV, UVA-PF = 35, SPF = 65), a permis de prévenir les recurrences de mélasma. En revanche, l'écran solaire teinté sans tinte, qui a une composition similaire en termes de protection contre les UV (UVA-PF = 36, SPF = 64), ne présentait pas de filtres spécifiques pour la lumière visible. Les patients ont été inscrits pour la durée d'un mois et demi."
+    }
+  ],
+  "expected_source_hit_rate": 1.0,
+  "limitations": [
+    "The bilingual benchmark is small and manually curated.",
+    "RAGAS scores depend on the local evaluator model and are not a clinical validation.",
+    "Expected source DOI checks are reported separately from RAGAS metrics."
+  ]
+}

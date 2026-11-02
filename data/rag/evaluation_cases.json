@@ -1,0 +1,44 @@
+[
+  {
+    "id": "acne-en",
+    "language": "en",
+    "question": "What does the EuroGuiDerm acne guideline report about its recommendations?",
+    "expected_source_dois": ["10.1111/jdv.70331"],
+    "reference": "The retrieved EuroGuiDerm short guideline is an evidence- and consensus-based update of the European guideline for acne treatment. The answer should summarize only details supported by the retrieved guideline passages and should not turn them into individualized treatment advice."
+  },
+  {
+    "id": "acne-fr",
+    "language": "fr",
+    "question": "Que rapporte le guide EuroGuiDerm sur ses recommandations pour l’acné ?",
+    "expected_source_dois": ["10.1111/jdv.70331"],
+    "reference": "Le guide court EuroGuiDerm est une mise à jour européenne fondée sur les preuves et le consensus pour le traitement de l’acné. La réponse doit résumer uniquement les détails étayés par les passages retrouvés et ne pas les transformer en conseil thérapeutique personnalisé."
+  },
+  {
+    "id": "eczema-en",
+    "language": "en",
+    "question": "What does the pediatric review report about care for atopic dermatitis?",
+    "expected_source_dois": ["10.7759/cureus.69416"],
+    "reference": "The pediatric review discusses atopic dermatitis in children, including challenges in care and the need for appropriate clinical management. Summarize only findings supported by the retrieved passages; do not invent a personalized product routine or medication regimen."
+  },
+  {
+    "id": "eczema-fr",
+    "language": "fr",
+    "question": "Que rapporte la revue pédiatrique sur la prise en charge de la dermatite atopique ?",
+    "expected_source_dois": ["10.7759/cureus.69416"],
+    "reference": "La revue pédiatrique aborde la dermatite atopique chez l’enfant, notamment les difficultés de prise en charge et le besoin d’un suivi clinique adapté. Résumer uniquement les éléments étayés par les passages retrouvés, sans inventer de routine personnalisée ni de posologie."
+  },
+  {
+    "id": "melasma-en",
+    "language": "en",
+    "question": "What did the clinical study compare for melasma and tinted sunscreen?",
+    "expected_source_dois": ["10.1111/jocd.70450"],
+    "reference": "The prospective randomized investigator-blinded study compared a visible-light-protective tinted sunscreen with an untinted sunscreen in people with melasma during summer. Report the study design and outcomes only when they are present in the retrieved excerpts; do not make a personal sunscreen recommendation."
+  },
+  {
+    "id": "melasma-fr",
+    "language": "fr",
+    "question": "Que comparait l’étude clinique sur le mélasma et les écrans solaires teintés ?",
+    "expected_source_dois": ["10.1111/jocd.70450"],
+    "reference": "L’étude prospective randomisée et en aveugle pour l’investigateur comparait, durant l’été, un écran solaire teinté protégeant de la lumière visible à un écran non teinté chez des personnes atteintes de mélasma. Ne rapporter les résultats que s’ils figurent dans les extraits retrouvés et ne pas en faire une recommandation personnelle."
+  }
+]
